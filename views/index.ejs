@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css"></link>
+    <title>Workout Tracker</title>
+</head>
+<body>
+    <h1>RoundByRound</h1>
+    <h2>Create and track your training sessions below</h2>
+    <section>
+        <form action="/workouts" method="POST">
+            <h3>Date</h3><input type="date" name="date" required></input>   <!-- string inside of the vlaue must exactly match the enum array strings or the session can't be saved to the databser -->
+            <h3>What did you train today?</h3><select name="sessionType" id="workoutType" required><option value="">Select a Workout</option><option value="boxing">Boxing</option><option value="kickboxing/muay thai">Kickboxing/Muay Thai</option><option value="strength training">Strength Training</option></select>
+            <h3>Jumprope</h3><select name="jumpRope" id="jumpRope" required><option value="">Select an option</option><option value="yes">Yes</option><option value="no">No</option></select>
+            <h3>Shadow Boxing</h3><select name="shadowBox" id="shadowBox" required><option value="">Select an option</option><option value="yes">Yes</option><option value="no">No</option></select>
+            <h3>Heavy Bag</h3><select name="heavyBag" id="heavyBag" required><option value="">Select an option</option><option value="yes">Yes</option><option value="no">No</option></select>
+            <h3>Padwork</h3><select name="padWork" id="padWork" required><option value="">Select an option</option><option value="yes">Yes</option><option value="no">No</option></select>
+            <h3>Drills</h3><select name="drills" id="drills" required><option value="">Select an option</option><option value="yes">Yes</option><option value="no">No</option></select>
+            <h3>Sparring</h3><select name="sparring" id="sparring" required><option value="">Select an option</option><option value="yes">Yes</option><option value="no">No</option></select>
+            <h3>Weight Training</h3><select name="weightTraining" id="weightTraining" required><option value="">Select training type</option><option value="push day">Push Day</option><option value="pull day">Pull Day</option><option value="leg day">Leg Day</option><option value="no weight training">No Weight training</option></select>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <section class="workoutLog"> 
+        <% for(let i = 0; i < sessions.length; i++) {%>
+        <section class="sessions <%= sessions[i].completed ? 'completed' : '' %>">
+            <h4>Date: <%= sessions[i].date.toLocaleDateString('en-US', {timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}) %></h4>
+            <h4>Session: <%= sessions[i].sessionType %></h4>
+            <h4>Jump Rope:<%= sessions[i].jumpRope %></h4>
+            <h4>Shadow Boxing: <%= sessions[i].shadowBox %></h4>
+            <h4>Heavy Bag: <%= sessions[i].heavyBag %></h4>
+            <h4>Padwork: <%= sessions[i].padWork %></h4>
+            <h4>Drills: <%= sessions[i].drills %></h4>
+            <h4>Sparring: <%= sessions[i].sparring %></h4>
+            <h4>Weight Training: <%= sessions[i].weightTraining %></h4>
+        
+            <% if (sessions[i].completed) { %>
+                <h3 id="completed">Compeleted</h3>
+            <% } else { %>
+                <button class="completedBtn" data-done-id="<%= sessions[i]._id %>"><i class="fa-solid fa-check" aria-hidden="true"></i></button>
+            <% } %>
+
+            <button class="trash" data-trash-id="<%= sessions[i]._id %>"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></button>
+
+        </section>
+       <% } %>
+    </section>
+    <script src="https://kit.fontawesome.com/d64fd93eee.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

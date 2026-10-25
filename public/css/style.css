@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+    font-size: 62.5%;
+    background: #414345;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #faf6f0;
+    font-family: 'Roboto Condensed', 'Helvetica', sans-serif;
+    display: grid;
+    grid-template-columns: 7.5% 20% 1fr 7.5%;
+    align-items: start;
+}
+body > h1{
+    grid-column: 1 / -1;
+    background: #d9e4f0;
+    color: #000;
+    margin: 0;
+    padding: 1.5rem 7.5%;
+}
+h2{
+    grid-column: 2 / 4;
+    border: 1px solid #000;
+    border-radius: 15px;
+    padding: 1.5rem;
+    background: #faf6f0;
+    color: #000;
+    margin: 3vh 0 5px;
+    text-align: center;
+}
+body > section:first-of-type{
+    grid-column: 2;
+    background: #faf6f0;
+    border: 2px solid #000;
+    border-radius: 15px;
+    color: #000;
+    padding: 1rem 8%;
+    margin-bottom: 3vh;
+}
+.workoutLog{
+    grid-column: 3;
+    margin-left: 2rem;
+}
+.sessions{
+    border: 2px solid #000;
+    border-radius: 15px;
+    background: #faf6f0;
+    color: #000;
+    padding: 0 1.5%;
+    margin-bottom: 5px;
+}
+h1{
+    font-size: 2.8rem;
+}
+h2{
+    font-size: 1.6rem;
+}
+h3{
+    font-size: 1.2rem;
+}
+input, select{
+    font-size: 1.2rem;
+    text-indent: 5px;
+    width: 75%;
+}
+button{
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+h4{
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-right: 1.5rem;
+}
+#completed{
+    font-weight: bold;
+    color: #5a3b78;
+}
+.completed h4{
+    text-decoration: line-through;
+}
