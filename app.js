@@ -2,7 +2,7 @@ import express from 'express';
 
 import workoutsRoutes from './routes/workoutsRoutes.js'  // imports routes for anyting that starts with /workouts
 
-import Workouts from './models/workouts.js' // imports the model that are stored in the database.
+import Workouts from './models/Workouts.js' // imports the model that are stored in the database.
 
 const app = express();
 // const bodyParser = require('body-parser');
