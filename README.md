@@ -4,7 +4,7 @@ RoundByRound is a training session tracker for combat sports. Log each workout w
 
 ## Demo
 
-![RoundByRound demo showing the training session form and logged sessions](./public/image/demo.png)
+![RoundByRound demo showing the training session form and logged sessions](./public/images/rounds.png)
 
 ## Features
 
