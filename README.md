@@ -46,7 +46,7 @@ RoundByRound is a training session tracker for combat sports. Log each workout w
    ```
    node server.js
    ```
-5. Open [http://localhost:8000](http://localhost:8000) in your browser.
+5. Open [http://localhost:8080](http://localhost:8000) in your browser.
 
 ## Using the app
 
