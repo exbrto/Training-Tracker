@@ -1,4 +1,4 @@
-import Workouts from '../models/workouts.js'        // imports the model from Workouts.js so that it can be saved to the databse
+import Workouts from '../models/Workouts.js'        // imports the model from Workouts.js so that it can be saved to the databse
 
 export async function createWorkout(req, res, next) {       // this function runs when the form is submitted (the POST request)
                                                             // next passes errors to express 
